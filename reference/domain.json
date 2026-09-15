@@ -1,0 +1,18 @@
+{
+  "metric_examples": [
+    "revenue",
+    "gross_margin",
+    "shares_outstanding",
+    "fx_rate"
+  ],
+  "scenarios": [
+    "base",
+    "bull",
+    "bear"
+  ],
+  "review_states": [
+    "draft",
+    "review",
+    "published"
+  ]
+}
