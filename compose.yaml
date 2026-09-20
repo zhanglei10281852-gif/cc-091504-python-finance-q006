@@ -3,10 +3,17 @@ services:
     build: .
     environment:
       PORT: 8000
+      SERVERDB_DB: /data/db.json
+      SERVERDB_SECRET: ${SERVERDB_SECRET:-change-me-in-production}
     ports:
       - "8000:8000"
+    volumes:
+      - serverdb-data:/data
     healthcheck:
       test: ["CMD", "python3", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')"]
       interval: 5s
       timeout: 2s
       retries: 5
+
+volumes:
+  serverdb-data:
